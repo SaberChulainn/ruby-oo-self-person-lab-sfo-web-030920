@@ -7,12 +7,15 @@ class Person
       @happiness = happiness
       @hygiene = hygiene
     end
+    
       def clean?
         @hygiene < 8 ? false : true
       end
+      
       def happy?
           @happiness < 8 ? false : true
       end
+      
       def happiness=(num)
         # 5, but want 4
         @happiness = num
@@ -22,6 +25,7 @@ class Person
           @happiness = 0
         end
       end
+      
       def hygiene=(num)
           @hygiene = num
         if @hygiene >= 10
@@ -30,24 +34,29 @@ class Person
           @hygiene = 0
         end
       end
+      
       def get_paid(amount)
           @bank_account += amount
           return 'all about the benjamins'
       end
+      
       def take_bath
         self.hygiene += 4
         return "♪ Rub-a-dub just relaxing in the tub ♫"
       end
+      
       def work_out
         self.happiness += 2
         self.hygiene -= 3
         return '♪ another one bites the dust ♫'
       end
+      
       def call_friend(friend)
         self.happiness += 3
         friend.happiness += 3
         return "Hi #{friend.name}! It's #{self.name}. How are you?"
       end
+      
       def start_conversation(friend, topic)
         if topic == "politics"
           self.happiness -= 2
@@ -61,4 +70,5 @@ class Person
           return "blah blah blah blah blah"
         end
       end
+      
   end
